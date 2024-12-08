@@ -4,7 +4,7 @@ const loadDocx = async (zip) => {
 	const doc = new Docxtemplater(zip, {
 		paragraphLoop: true,
 		linebreaks: true,
-		delimiters: { start: "{{", end: "}}" },
+		delimiters: { start: "{", end: "}" },
 	});
 
 	return doc;

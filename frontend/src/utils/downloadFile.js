@@ -16,7 +16,7 @@ const handleDownloadFile = async (uri) => {
         const file = await handleGetFile(uri)
         const url = window.URL.createObjectURL(file);
     
-        handleDownload(url, "output.docx")
+        handleDownload(url, "output.zip");
     } 
     catch (err) {
         handleNotifications("error", err.message);

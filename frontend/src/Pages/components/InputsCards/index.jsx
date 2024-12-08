@@ -1,13 +1,84 @@
+/* eslint-disable react/prop-types */
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import "./styles.css";
 
-const InputCard = ({type="text", id, label, placeholder="placeholder", onChange, required=true, defaultValue="", className="input-container", haveLabel=true}) => {
-    return(
+const InputCard = ({
+    type="text", 
+    id, 
+    label, 
+    placeholder="placeholder", 
+    onChange, 
+    required=true, 
+    defaultValue="", 
+    className="input-container", 
+    haveLabel=true,
+    icon
+}) => {
+
+    return (
         <div className={`${className}`}>
             {haveLabel && <label htmlFor={id}>{label} {required && "*"}</label>}
             
-            <input
-                type={type}
+            <div className="icon-input-container">
+                {icon && icon}
+
+                <input
+                    type={type}
+                    placeholder={placeholder}
+                    name={id}
+                    id={id}
+                    onChange={(event) => {onChange(event.target.value)}}
+                    required={required}
+                    defaultValue={defaultValue}
+                />
+            </div>
+        </div>
+    );
+}
+
+const OptionInputCard = ({
+    id, 
+    label, 
+    array,
+    onChange, 
+    defaultValue="", 
+    none=false, 
+    padding=15,
+    required=false
+}) => {
+
+    return(
+        <div className="input-container">
+            <label htmlFor={id}>{label} </label>
+            <select 
+                name={id} 
+                id={id}
+                onChange={(event) => {onChange(event.target.value)}}
+                value={defaultValue}
+                style={{padding: padding}}
+                required={required}
+            >
+                {none && 
+                    <option value="">Seleccionar</option>
+                }
+                {array && array?.map((item, index) => (
+                    <option 
+                        key={index}
+                        value={item?.id || item}
+                    >
+                        {item?.Nombre || item}
+                    </option>
+                ))}
+            </select>
+        </div> 
+    );
+}
+
+const TextAreaCard = ({id, label, placeholder="placeholder", onChange, required=true, defaultValue=""}) => {
+    return(
+        <div className="input-container">
+            <label htmlFor={id}>{label} {required && "*"}</label>
+            <textarea
                 placeholder={placeholder}
                 name={id}
                 id={id}
@@ -19,49 +90,15 @@ const InputCard = ({type="text", id, label, placeholder="placeholder", onChange,
     );
 }
 
-const OptionInputCard = ({id, label, array=[], onChange, defaultValue=0, none=false}) => {
-    return(
-        <div className="input-container">
-            <label htmlFor={id}>{label} </label>
-            <select 
-                name={id} 
-                id={id}
-                onChange={(event) => {onChange(event.target.value)}}
-                value={defaultValue}
-            >
-                {none && 
-                    <option value="">Seleccionar</option>
-                }
-                {array?.map((item, index) => (
-                    <option 
-                        key={index}
-                        value={item}
-                    >
-                        {item}
-                    </option>
-                ))}
-            </select>
-        </div> 
-    );
-}
-
-const TextAreaCard = ({id, label, placeholder="placeholder", onChange, required=true, stateKey, defaultValue=""}) => {
-    return(
-        <div className="input-container">
-            <label htmlFor={id}>{label} {required && "*"}</label>
-            <textarea
-                placeholder={placeholder}
-                name={id}
-                id={id}
-                onChange={(event) => {onChange(event.target.value)}}
-                required
-                defaultValue={defaultValue}
-            />
-        </div>
-    );
-}
-
-const UploadFileCard = ({id, label="Cargar Archivo", onChange, filesArray, multiple=true, info="Archivos PDF (.pdf) o Excel (.xlsx)", accept=".pdf, .xlsx"}) => {
+const UploadFileCard = ({
+    id, 
+    label="Cargar Archivo", 
+    onChange, 
+    filesArray, 
+    multiple=false, 
+    info="Archivos PDF (.pdf) o Excel (.xlsx)", 
+    accept=".pdf, .xlsx"
+}) => {
     const array = filesArray ? [...filesArray] : null;
 
     return(

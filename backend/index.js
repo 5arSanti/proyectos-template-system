@@ -4,7 +4,6 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 const routerApi = require("./routes");
-const { getQuery } = require("./database/query");
 
 const app = express();
 const port = 3080;
@@ -37,14 +36,3 @@ routerApi(app);
 app.listen(port, () => {
     console.log("Escuchando en el puerto: " + port);
 })
-
-
-setInterval(async () => {
-	try {
-		await getQuery("SELECT 1 + 1 AS solution");
-	}
-	catch (err) {
-		console.error("Error en la función verificación periodica de conexión a BD\n" + err.message);
-	}
-
-}, 7200000);

@@ -9,17 +9,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Context
-import { AppContext, AppProvider } from "../../Context";
+import { AppProvider } from "../../Context";
 
 //Screens
-import { LoginScreen } from "../Screens/LoginScreen";
-import { RegisterScreen } from "../Screens/RegisterScreen";
 import { UploadScreen } from "../Screens/UploadScreen";
-import { UsersScreen } from "../Screens/UsersScreen";
 
 //Components
 import { MainContainer } from "../components/MainContainer";
-import { Footer } from "../components/Footer";
 import { AccesibilityCard } from "../components/AccesibilityCard";
 import { GovNavbar } from "../components/GovNavbars";
 import { ConfirmationModal } from "../components/ConfirmationModal";
@@ -40,19 +36,10 @@ const Wrapper = ({children}) => {
 
 const AppRoutes = () => {
 
-    const context = React.useContext(AppContext);
-    const { auth } = context;
-
     let routes = useRoutes([
         {path: "/home", element: <UploadScreen/>},
 
         {path: "/*", element: <Navigate replace to={"/home"}/>},
-
-        {path: "/users", element: <UsersScreen/>},
-
-        {path: "/register", element: <RegisterScreen/>},
-
-        {path: "/login", element: !auth ? <LoginScreen/> : <Navigate replace to={"/home"}/>},
     ]);
     
     return routes;

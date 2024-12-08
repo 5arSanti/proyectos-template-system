@@ -26,6 +26,12 @@ const UploadInfoContainer = () => {
                 </ButtonCard>
             </AllInfoGridContainer>
 
+            <WrapperContainer2 flexDirection="column">
+                <UploadForm
+
+                />
+            </WrapperContainer2>
+
             <AllInfoGridContainer className="grid-075-125">
                 <WrapperContainer2 flexDirection="column" justifyContent="start">
                     <ButtonCard onClick={async (event) => {

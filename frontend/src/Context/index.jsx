@@ -43,16 +43,6 @@ const AppProvider = ({children}) => {
     }
 
 
-    React.useEffect(() => {
-        const endpoints = [
-            "/users",
-        ]
-
-        fetchData(endpoints)
-    }, []);
-    
-
-
     //CAMBIO DE COLORES
     const [activeHighContrast, setActiveHighContrast] = React.useState(false);
     React.useEffect(() => {

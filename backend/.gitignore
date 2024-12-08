@@ -7,4 +7,4 @@
 app.properties.ini
 *.ini
 
-output.docx
+project_files/output.docx

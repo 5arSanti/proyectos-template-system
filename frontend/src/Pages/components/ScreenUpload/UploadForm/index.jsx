@@ -56,10 +56,11 @@ const UploadForm = () => {
 
                 <UploadFileCard
                     id={"file"}
-                    onChange={(event) => handleFileChange(event, ['.pdf'], setValues)}
+                    onChange={(event) => handleFileChange(event, ['.xlsx'], setValues)}
                     filesArray={values?.files}
-                    accept=".pdf"
-                    info="Archivos PDF (.pdf)"
+                    accept=".xlsx"
+                    info="Archivos PDF Excel"
+                    multiple={false}
                 />
 
                 <ButtonCard 
