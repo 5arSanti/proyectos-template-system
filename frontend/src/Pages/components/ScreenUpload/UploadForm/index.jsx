@@ -4,7 +4,7 @@ import { AppContext } from "../../../../Context";
 
 import { WrapperContainer1 } from "../../WrapperContainers";
 import { SubTitle } from "../../SubTitle";
-import { UploadFileCard } from "../../InputsCards";
+import { OptionInputCard, UploadFileCard } from "../../InputsCards";
 import { ButtonCard } from "../../ButtonCard";
 import { handleFileChange } from "../../../../utils/handleFileChange";
 import { handlePostFile } from "../../../../utils/handleData/handlePostData";
@@ -13,6 +13,7 @@ import { validateFile } from "../../../../utils/validate/validateFiles";
 
 
 import "./styles.css";
+import { handleInputChange } from "../../../../utils/handleInputChange";
 
 
 const UploadForm = () => {
@@ -20,6 +21,7 @@ const UploadForm = () => {
 
     const [values, setValues] = React.useState({
         files: null,
+        bootcamp: null,
     });
 
     const handleFileUpload = async (event) => {
@@ -31,6 +33,7 @@ const UploadForm = () => {
             validateFile(values?.files);
     
             const formData = new FormData();
+            formData.append('bootcamp', values.bootcamp);
 
             for (let i = 0; i < values.files.length; i++) {
                 formData.append('file', values.files[i]);
@@ -61,6 +64,14 @@ const UploadForm = () => {
                     accept=".xlsx"
                     info="Archivos PDF Excel"
                     multiple={false}
+                />
+                <OptionInputCard
+                    id={"bootcamp"}
+                    label={"Bootcamp"}
+                    onChange={(event) => handleInputChange("bootcamp", event, setValues)}
+                    array={["Programacion", "Analisis de datos", "Inteligencia aritificial"]}
+                    none={true}
+                    defaultValue={values?.bootcamp}
                 />
 
                 <ButtonCard 

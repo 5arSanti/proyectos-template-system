@@ -27,9 +27,7 @@ const UploadInfoContainer = () => {
             </AllInfoGridContainer>
 
             <WrapperContainer2 flexDirection="column">
-                <UploadForm
-
-                />
+                <UploadForm/>
             </WrapperContainer2>
 
             <AllInfoGridContainer className="grid-075-125">

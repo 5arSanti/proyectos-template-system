@@ -48,6 +48,7 @@ router.get("/output", async (request, response) => {
 router.post("/upload", upload.single("file"), async (request, response) => {
 	try {
 		const { file } = request;
+		const { bootcamp } = request.body;
 
 		validateFile(file);
 
@@ -55,13 +56,12 @@ router.post("/upload", upload.single("file"), async (request, response) => {
 
 		const jsonData = await parseXLSX(file);
 
-        await createOutputFile(jsonData, name);
+        await createOutputFile(jsonData, name, bootcamp);
 
 
 		return response.json({Status: "Success", message: "Archivo procesado correctamente"});
 	}
 	catch (err) {
-		console.log(err)
 		return response.status(500).json({Error: err.message});
 	}
 });
