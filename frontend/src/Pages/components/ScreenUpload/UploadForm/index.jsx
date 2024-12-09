@@ -63,7 +63,7 @@ const UploadForm = () => {
                     filesArray={values?.files}
                     accept=".xlsx"
                     info="Archivos PDF Excel"
-                    multiple={false}
+                    multiple={true}
                 />
                 <OptionInputCard
                     id={"bootcamp"}

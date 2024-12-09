@@ -6,11 +6,6 @@ const { handleBootcampValues } = require('./handleBootcampValues');
 
 const createOutputFile = async (jsonData, filename="", bootcamp="") => {
 
-	const outputPath = path.resolve(__dirname, '../project_files/output');
-
-	await fs.rm(outputPath, { recursive: true, force: true })
-	await fs.mkdir(outputPath);
-
 	const bootcampValues = handleBootcampValues(bootcamp);
 
 	const promises = jsonData.map(async (json, index) => {
@@ -18,7 +13,7 @@ const createOutputFile = async (jsonData, filename="", bootcamp="") => {
 
 		const outputBufffer = await replaceInDoc(templateBuffer, {...json, ...bootcampValues});
 
-		const outputPath = path.resolve(__dirname, '../project_files', "output", `${filename}_${index + 1}.docx`);
+		const outputPath = path.resolve(__dirname, '../project_files', "output", `${bootcamp}_${filename}_${index + 1}.docx`);
 
 		await fs.writeFile(outputPath, outputBufffer);
 	});

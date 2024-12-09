@@ -17,12 +17,16 @@ const UploadInfoContainer = () => {
 
     return(
         <WrapperContainer2 padding={0} flexDirection={"column"}>
-            <AllInfoGridContainer className="grid-1">
-                {/* <UploadForm/> */}
+            <AllInfoGridContainer className="grid-1-1">
                 <ButtonCard onClick={() => {
                     handleDownloadFile("/file/output")
                 }}>
                     Descargar ultimo archivo procesado
+                </ButtonCard>
+                <ButtonCard onClick={(event) => {
+                    handlePostData(event, {}, "/file/delete-files")
+                }}>
+                    Eliminar archivos de output
                 </ButtonCard>
             </AllInfoGridContainer>
 

@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require('path');
 const archiver = require("archiver");
+const fs = require('fs').promises;
+
 
 const router = express.Router();
 
@@ -45,18 +47,21 @@ router.get("/output", async (request, response) => {
 
 
 // POST file/upload
-router.post("/upload", upload.single("file"), async (request, response) => {
+router.post("/upload", upload.array("file"), async (request, response) => {
 	try {
-		const { file } = request;
+		const { files } = request;
 		const { bootcamp } = request.body;
 
-		validateFile(file);
+		validateFile(files);
 
-		const name = file.filename.split(".")[0]
+		files.forEach(async file => {
+			const name = file.filename.split(".")[0]
 
-		const jsonData = await parseXLSX(file);
+			const jsonData = await parseXLSX(file);
 
-        await createOutputFile(jsonData, name, bootcamp);
+			await createOutputFile(jsonData, name, bootcamp);
+		})
+
 
 
 		return response.json({Status: "Success", message: "Archivo procesado correctamente"});
@@ -65,6 +70,20 @@ router.post("/upload", upload.single("file"), async (request, response) => {
 		return response.status(500).json({Error: err.message});
 	}
 });
+
+router.post("/delete-files", async (request, response) => {
+	try {
+		const outputPath = path.resolve(__dirname, '../../project_files/output');
+
+		await fs.rm(outputPath, { recursive: true, force: true })
+		await fs.mkdir(outputPath);
+
+		return response.json({Status: "Success", message: "Output vaciado correctamente"});
+	}
+	catch (err) {
+		return response.status(500).json({Error: err.message});
+	}
+})
 
 router.post("/json", async (request, response) => {
 	try {
