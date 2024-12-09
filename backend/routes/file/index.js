@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require('path');
 const archiver = require("archiver");
-const fs = require('fs').promises;
 
 
 const router = express.Router();
@@ -14,6 +13,7 @@ const { validateFile } = require("../../Utils/validateFiles");
 const { validateObjectValues } = require('../../Utils/validateObjectValues');
 const { createOutputFile } = require('../../Utils/createOutputFile');
 const { parseXLSX } = require("../../Utils/xlsx/parseXSLS");
+const { resetFolder } = require("../../Utils/resetFolder");
 
 
 router.get("/output", async (request, response) => {
@@ -73,10 +73,9 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 
 router.post("/delete-files", async (request, response) => {
 	try {
-		const outputPath = path.resolve(__dirname, '../../project_files/output');
-
-		await fs.rm(outputPath, { recursive: true, force: true })
-		await fs.mkdir(outputPath);
+		await resetFolder("Programacion")
+		// await resetFolder("Analisis de datos")
+		// await resetFolder("Inteligencia artificial")
 
 		return response.json({Status: "Success", message: "Output vaciado correctamente"});
 	}

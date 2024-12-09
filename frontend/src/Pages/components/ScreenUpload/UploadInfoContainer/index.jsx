@@ -34,7 +34,7 @@ const UploadInfoContainer = () => {
                 <UploadForm/>
             </WrapperContainer2>
 
-            <AllInfoGridContainer className="grid-075-125">
+            {/* <AllInfoGridContainer className="grid-075-125">
                 <WrapperContainer2 flexDirection="column" justifyContent="start">
                     <ButtonCard onClick={async (event) => {
                         await handlePostData(event, values, "/file/json");
@@ -54,7 +54,7 @@ const UploadInfoContainer = () => {
                         <CodeWrapper json={values?.jsonValue || ""}/>
                     </AllInfoGridContainer>
                 </WrapperContainer2>
-            </AllInfoGridContainer>
+            </AllInfoGridContainer> */}
         </WrapperContainer2>
     );
 }

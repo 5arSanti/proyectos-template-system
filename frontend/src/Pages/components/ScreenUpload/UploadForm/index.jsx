@@ -69,7 +69,7 @@ const UploadForm = () => {
                     id={"bootcamp"}
                     label={"Bootcamp"}
                     onChange={(event) => handleInputChange("bootcamp", event, setValues)}
-                    array={["Programacion", "Analisis de datos", "Inteligencia aritificial"]}
+                    array={["Programacion", "Analisis de datos", "Inteligencia artificial"]}
                     none={true}
                     defaultValue={values?.bootcamp}
                 />
