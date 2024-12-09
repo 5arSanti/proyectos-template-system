@@ -1,5 +1,6 @@
 import { handleGetFile } from "./handleData/handleFiles";
 import { handleNotifications } from "./handleNotifications";
+import moment from "moment";
 
 const handleDownload = (url, name) => {
     const pdfUrl = url;
@@ -12,11 +13,13 @@ const handleDownload = (url, name) => {
 }
 
 const handleDownloadFile = async (uri) => {
+    let date = new Date();
+
     try {
         const file = await handleGetFile(uri)
         const url = window.URL.createObjectURL(file);
     
-        handleDownload(url, "output.zip");
+        handleDownload(url, `Lote de Archivos - ${moment(date).format("DD-MM-YYYY_hh-mm")}.zip`);
     } 
     catch (err) {
         handleNotifications("error", err.message);

@@ -18,7 +18,7 @@ const handleBootcampValues = (bootcamp) => {
 				ada: "x",
 				pgr: "",
 			}; break;
-		case "Inteligencia aritificial":
+		case "Inteligencia artificial":
 			bootcampValues = {
 				ia: "x",
 				ada: "",
