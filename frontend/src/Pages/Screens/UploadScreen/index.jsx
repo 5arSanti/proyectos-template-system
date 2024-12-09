@@ -5,7 +5,7 @@ const UploadScreen = () => {
     return (
         <>
             <Title>
-                Carga de Datos para generacion de archivos
+                Generacion de Lotes (Proyectos - Habilidades del Poder)
             </Title>
             <UploadInfoContainer/>
         </>

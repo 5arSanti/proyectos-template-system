@@ -74,8 +74,8 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 router.post("/delete-files", async (request, response) => {
 	try {
 		await resetFolder("Programacion")
-		// await resetFolder("Analisis de datos")
-		// await resetFolder("Inteligencia artificial")
+		await resetFolder("Analisis de datos")
+		await resetFolder("Inteligencia artificial")
 
 		return response.json({Status: "Success", message: "Output vaciado correctamente"});
 	}

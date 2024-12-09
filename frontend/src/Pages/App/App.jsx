@@ -51,7 +51,7 @@ const App = () => {
             <HashRouter>
                 <Wrapper>
                     <GovNavbar/>
-                    <AccesibilityCard/>
+                    {/* <AccesibilityCard/> */}
                     <LoadingCard/>
                     <ConfirmationModal/>
 
