@@ -18,7 +18,7 @@ const { resetFolder } = require("../../Utils/resetFolder");
 
 router.get("/output", async (request, response) => {
 	try {
-		const outputDir = path.resolve(__dirname, "../../project_files/output");
+		const outputDir = path.resolve(__dirname, "../../project_files/output_pdf");
 
         const zipFileName = "output.zip";
 
@@ -75,9 +75,13 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 
 router.post("/delete-files", async (request, response) => {
 	try {
-		await resetFolder("Programacion")
-		await resetFolder("Analisis de datos")
-		await resetFolder("Inteligencia artificial")
+		await resetFolder("output/Programacion")
+		await resetFolder("output/Analisis de datos")
+		await resetFolder("output/Inteligencia artificial")
+
+		await resetFolder("output_pdf/Programacion")
+		await resetFolder("output_pdf/Analisis de datos")
+		await resetFolder("output_pdf/Inteligencia artificial")
 
 		return response.json({Status: "Success", message: "Output vaciado correctamente"});
 	}
@@ -85,6 +89,9 @@ router.post("/delete-files", async (request, response) => {
 		return response.status(500).json({Error: err.message});
 	}
 })
+
+
+
 
 router.post("/json", async (request, response) => {
 	try {

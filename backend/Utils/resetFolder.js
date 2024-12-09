@@ -6,7 +6,7 @@ const resetFolder = async (folder) => {
 		throw new Error("Folder name is required");
 	}
 
-	const folderPath = path.resolve(__dirname, `../project_files/output/${folder}`);
+	const folderPath = path.resolve(__dirname, `../project_files/${folder}`);
 
 	await fs.rm(folderPath, { recursive: true, force: true })
 	await makeFolder(`${folder}`);
@@ -19,7 +19,7 @@ const makeFolder = async (folder) => {
 		throw new Error("Folder name is required");
 	}
 
-	const folderPath = path.resolve(__dirname, `../project_files/output/${folder}`);
+	const folderPath = path.resolve(__dirname, `../project_files/${folder}`);
 
 	await fs.mkdir(folderPath);
 }

@@ -8,5 +8,6 @@ app.properties.ini
 *.ini
 
 project_files/output
+project_files/output_pdf
 project_files/*.docx
 hp/*.docx

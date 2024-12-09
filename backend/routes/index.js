@@ -4,6 +4,7 @@ const PropertiesReader = require('properties-reader');
 const properties = PropertiesReader('./app.properties.ini');
 
 const fileRouter = require("./file")
+const pdfRouter = require("./pdf")
 
 
 const routerApi = (app) => {
@@ -13,6 +14,7 @@ const routerApi = (app) => {
 	// Routes
 
 	router.use("/file", fileRouter);
+	router.use("/pdf", pdfRouter);
 }
 
 module.exports = routerApi;

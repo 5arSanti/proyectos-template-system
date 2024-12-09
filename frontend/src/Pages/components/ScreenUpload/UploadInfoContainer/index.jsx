@@ -22,11 +22,19 @@ const UploadInfoContainer = () => {
                 }}>
                     Descargar Lote
                 </ButtonCard>
+
                 <ButtonCard onClick={(event) => {
                     handlePostData(event, {}, "/file/delete-files")
                 }}>
                     Vaciar output
                 </ButtonCard>
+
+                <ButtonCard onClick={(event) => {
+                    handlePostData(event, {}, "/pdf/convert")
+                }}>
+                    Crear PDFs
+                </ButtonCard>
+
                 {parsedErrorLog &&
                     <ButtonCard onClick={() => jsonToExcel(parsedErrorLog)}>
                         Registros: {parsedErrorLog.length} <br />
