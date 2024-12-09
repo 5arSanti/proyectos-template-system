@@ -18,23 +18,30 @@ const createOutputFile = async (jsonData, filename="", bootcamp="", errorLog) =>
 				row: index + 2,
 				column: ""
 			})
-			return;
+			// return;
 		}
+
+
+
+		let invalidColumns = [];
 
 		let validations = Object.entries(json).filter(([key, value]) => {
 			if (value === "" || value === null || value === undefined) {
-
-				errorLog.push({
-					message: "El archivo contiene valores vacíos, null o undefined",
-					filename: filename,
-					row: index + 2,
-					column: key
-				})
-				return true
+				invalidColumns.push(`${key}`);
+				return true;
 			}
+			return false;
 		});
+
+
 		if (validations.length > 0) {
-			return;
+			errorLog.push({
+				message: "El archivo contiene valores vacíos, null o undefined",
+				filename: filename,
+				row: index + 2,
+				column: invalidColumns.join(", ")
+			});
+			// return;
 		}
 
 		const templateBuffer = await fs.readFile(path.join(__dirname, '../project_files', "template", 'template.docx'));

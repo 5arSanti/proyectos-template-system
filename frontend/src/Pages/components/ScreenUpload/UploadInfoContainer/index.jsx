@@ -11,8 +11,12 @@ const UploadInfoContainer = () => {
     const parsedErrorLog = JSON.parse(errorLog);
 
     return(
-        <WrapperContainer2 padding={0} flexDirection={"column"}>
-            <AllInfoGridContainer className="grid-1-1">
+        <AllInfoGridContainer className="grid-1-1">
+            <WrapperContainer2 flexDirection="column">
+                <UploadForm/>
+            </WrapperContainer2>
+
+            <WrapperContainer2 flexDirection="column">
                 <ButtonCard onClick={() => {
                     handleDownloadFile("/file/output")
                 }}>
@@ -23,19 +27,14 @@ const UploadInfoContainer = () => {
                 }}>
                     Vaciar output
                 </ButtonCard>
-            </AllInfoGridContainer>
-            
-            {parsedErrorLog &&
-                <ButtonCard onClick={() => jsonToExcel(parsedErrorLog)}>
-                    Registros: {parsedErrorLog.length} <br />
-                    Reporte de archivos no validos
-                </ButtonCard>
-            }
-
-            <WrapperContainer2 flexDirection="column">
-                <UploadForm/>
+                {parsedErrorLog &&
+                    <ButtonCard onClick={() => jsonToExcel(parsedErrorLog)}>
+                        Registros: {parsedErrorLog.length} <br />
+                        Reporte de archivos no validos
+                    </ButtonCard>
+                }
             </WrapperContainer2>
-        </WrapperContainer2>
+        </AllInfoGridContainer>
     );
 }
 
