@@ -54,17 +54,19 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 
 		validateFile(files);
 
-		files.forEach(async file => {
+		let errorLog = [];
+
+		const promises = files.map(async file => {
 			const name = file.filename.split(".")[0]
 
 			const jsonData = await parseXLSX(file);
 
-			await createOutputFile(jsonData, name, bootcamp);
+			await createOutputFile(jsonData, name, bootcamp, errorLog);
 		})
 
+		await Promise.all(promises);
 
-
-		return response.json({Status: "Success", message: "Archivo procesado correctamente"});
+		return response.json({Status: "Success", message: "Archivo procesado correctamente", errorLog: errorLog});
 	}
 	catch (err) {
 		return response.status(500).json({Error: err.message});

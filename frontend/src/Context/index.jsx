@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { handleColorsByFilters } from "../utils/handleColors";
-
 import { api } from "../utils/api";
 import { fetchAllData } from "../utils/handleData/handleFetchData";
 import { handleNotifications } from "../utils/handleNotifications";
@@ -42,12 +40,8 @@ const AppProvider = ({children}) => {
         }
     }
 
-
-    //CAMBIO DE COLORES
-    const [activeHighContrast, setActiveHighContrast] = React.useState(false);
-    React.useEffect(() => {
-        // handleColorsByFilters(activeHighContrast);
-    }, [activeHighContrast]);
+    // errorLog
+    const [errorLog, setErrorLog] = React.useState(null);
 
 
     
@@ -71,8 +65,6 @@ const AppProvider = ({children}) => {
     });
 
 
-    // Edicion de Usuarios
-    const [users, setUsers] = React.useState(null);
 
 
     return (
@@ -98,18 +90,13 @@ const AppProvider = ({children}) => {
                 responseData,
                 setResponseData,
 
-                //COLORES POR FILTRO
-                handleColorsByFilters,
-                activeHighContrast,
-                setActiveHighContrast,
 
                 //Modal de confirmación
                 openConfirmationModal,
                 setOpenConfirmationModal,
 
-                //Usuarios
-                users,
-                setUsers,
+                errorLog,
+                setErrorLog,
 
                 fetchData
             }}

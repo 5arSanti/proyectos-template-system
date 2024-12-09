@@ -14,6 +14,7 @@ import { validateFile } from "../../../../utils/validate/validateFiles";
 
 import "./styles.css";
 import { handleInputChange } from "../../../../utils/handleInputChange";
+import { reloadLocation } from "../../../../utils/realoadLocation";
 
 
 const UploadForm = () => {
@@ -39,7 +40,13 @@ const UploadForm = () => {
                 formData.append('file', values.files[i]);
             }
     
-            await handlePostFile(event, formData, "/file/upload");
+            await handlePostFile(event, formData, "/file/upload", (data) => {
+                if (data?.errorLog) {
+                    console.log(data?.errorLog)
+                    localStorage.setItem("errorLog", JSON.stringify(data?.errorLog))
+                }
+                reloadLocation();
+            });
         } 
         catch (err) {
             return handleNotifications("error", err.message);

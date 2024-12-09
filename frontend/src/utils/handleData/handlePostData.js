@@ -56,10 +56,9 @@ const handlePostFile = async (event, object, endpoint, callback = reloadLocation
 
         if(data.Status === "Success") {
             handleNotifications("success", data.message);
-            callback();
-
-            return data;
-        } else {
+            callback(data);
+        } 
+        else {
             handleNotifications("error", data.Error)
         }
       
