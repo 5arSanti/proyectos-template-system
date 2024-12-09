@@ -20,7 +20,8 @@ const createOutputFile = async (jsonData, filename="", bootcamp="", errorLog) =>
 			})
 			return;
 		}
-		Object.entries(json).filter(([key, value]) => {
+
+		let validations = Object.entries(json).filter(([key, value]) => {
 			if (value === "" || value === null || value === undefined) {
 
 				errorLog.push({
@@ -29,9 +30,12 @@ const createOutputFile = async (jsonData, filename="", bootcamp="", errorLog) =>
 					row: index + 2,
 					column: key
 				})
-				return
+				return true
 			}
 		});
+		if (validations.length > 0) {
+			return;
+		}
 
 		const templateBuffer = await fs.readFile(path.join(__dirname, '../project_files', "template", 'template.docx'));
 		const hpTemplateBuffer = await fs.readFile(path.join(__dirname, '../project_files', "template", 'hp_template.docx'));
