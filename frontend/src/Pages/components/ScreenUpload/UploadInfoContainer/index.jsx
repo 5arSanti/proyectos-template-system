@@ -16,7 +16,7 @@ const UploadInfoContainer = () => {
                 <UploadForm/>
             </WrapperContainer2>
 
-            <WrapperContainer2 flexDirection="column">
+            {/* <WrapperContainer2 flexDirection="column">
                 <ButtonCard onClick={() => {
                     handleDownloadFile("/file/output")
                 }}>
@@ -41,7 +41,7 @@ const UploadInfoContainer = () => {
                         Reporte de archivos no validos
                     </ButtonCard>
                 }
-            </WrapperContainer2>
+            </WrapperContainer2> */}
         </AllInfoGridContainer>
     );
 }

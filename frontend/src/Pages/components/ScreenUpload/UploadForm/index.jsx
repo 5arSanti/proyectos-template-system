@@ -22,7 +22,7 @@ const UploadForm = () => {
 
     const [values, setValues] = React.useState({
         files: null,
-        bootcamp: null,
+        region: null,
     });
 
     const handleFileUpload = async (event) => {
@@ -40,13 +40,7 @@ const UploadForm = () => {
                 formData.append('file', values.files[i]);
             }
     
-            await handlePostFile(event, formData, "/file/upload", (data) => {
-                if (data?.errorLog) {
-                    console.log(data?.errorLog)
-                    localStorage.setItem("errorLog", JSON.stringify(data?.errorLog))
-                }
-                reloadLocation();
-            });
+            await handlePostFile(event, formData, "/pgr/upload");
         } 
         catch (err) {
             return handleNotifications("error", err.message);
@@ -73,12 +67,12 @@ const UploadForm = () => {
                     multiple={true}
                 />
                 <OptionInputCard
-                    id={"bootcamp"}
-                    label={"Bootcamp"}
-                    onChange={(event) => handleInputChange("bootcamp", event, setValues)}
-                    array={["Programacion", "Analisis de datos", "Inteligencia artificial"]}
+                    id={"Region"}
+                    label={"Region"}
+                    onChange={(event) => handleInputChange("region", event, setValues)}
+                    array={["R6-L1", "R6-L2", "R9-L1"]}
                     none={true}
-                    defaultValue={values?.bootcamp}
+                    defaultValue={values?.region}
                 />
 
                 <ButtonCard 

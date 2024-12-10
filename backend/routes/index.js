@@ -5,6 +5,7 @@ const properties = PropertiesReader('./app.properties.ini');
 
 const fileRouter = require("./file")
 const pdfRouter = require("./pdf")
+const pgrRouter = require("./pgr")
 
 
 const routerApi = (app) => {
@@ -15,6 +16,7 @@ const routerApi = (app) => {
 
 	router.use("/file", fileRouter);
 	router.use("/pdf", pdfRouter);
+	router.use("/pgr", pgrRouter);
 }
 
 module.exports = routerApi;
