@@ -3,7 +3,6 @@ const fs = require('fs').promises;
 
 const { replaceInDoc } = require("./docx/replacePlaceholders");
 const { handleBootcampValues } = require('./handleBootcampValues');
-const { convertDocxBufferToPdfBuffer } = require('./convertDocxToPdf');
 
 const createOutputFile = async (jsonData, filename="", bootcamp="", errorLog) => {
 
