@@ -1,14 +1,10 @@
 import { WrapperContainer2 } from "../../WrapperContainers";
 import { UploadForm } from "../UploadForm";
 import { AllInfoGridContainer } from "../../AllInfoContainer";
-import { ButtonCard } from "../../ButtonCard";
-import { handleDownloadFile } from "../../../../utils/downloadFile";
 import { handlePostData } from "../../../../utils/handleData/handlePostData";
-import { jsonToExcel } from "../../../../utils/jsonToExcel";
+import { ButtonCard } from "../../ButtonCard";
 
 const UploadInfoContainer = () => {
-    const errorLog = localStorage.getItem("errorLog");
-    const parsedErrorLog = JSON.parse(errorLog);
 
     return(
         <AllInfoGridContainer className="grid-1-1">
@@ -16,32 +12,13 @@ const UploadInfoContainer = () => {
                 <UploadForm/>
             </WrapperContainer2>
 
-            {/* <WrapperContainer2 flexDirection="column">
-                <ButtonCard onClick={() => {
-                    handleDownloadFile("/file/output")
-                }}>
-                    Descargar Lote
-                </ButtonCard>
-
+            <WrapperContainer2 flexDirection="column">
                 <ButtonCard onClick={(event) => {
-                    handlePostData(event, {}, "/file/delete-files")
+                    handlePostData(event, {}, "/pgr/delete-files")
                 }}>
-                    Vaciar output
+                    Vaciar entregables
                 </ButtonCard>
-
-                <ButtonCard onClick={(event) => {
-                    handlePostData(event, {}, "/pdf/convert")
-                }}>
-                    Crear PDFs
-                </ButtonCard>
-
-                {parsedErrorLog &&
-                    <ButtonCard onClick={() => jsonToExcel(parsedErrorLog)}>
-                        Registros: {parsedErrorLog.length} <br />
-                        Reporte de archivos no validos
-                    </ButtonCard>
-                }
-            </WrapperContainer2> */}
+            </WrapperContainer2>
         </AllInfoGridContainer>
     );
 }
