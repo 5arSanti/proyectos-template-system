@@ -38,22 +38,21 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 					Nombre: json.Nombre,
 					styles: getRandomNumber(25),
 					region: region,
-					imagen: images[getRandomNumber(40)],
-					descripcion: descriptions[getRandomNumber(20)],
+					imagen: images[getRandomNumber(images.length)],
+					descripcion: descriptions[getRandomNumber(descriptions.length)],
 					pasatiempos: [
-						pasatiempos[getRandomNumber(30)],
-						pasatiempos[getRandomNumber(30)],
-						pasatiempos[getRandomNumber(30)],
-						pasatiempos[getRandomNumber(30)],
-						pasatiempos[getRandomNumber(30)],
+						pasatiempos[getRandomNumber(pasatiempos.length)],
+						pasatiempos[getRandomNumber(pasatiempos.length)],
+						pasatiempos[getRandomNumber(pasatiempos.length)],
+						pasatiempos[getRandomNumber(pasatiempos.length)],
+						pasatiempos[getRandomNumber(pasatiempos.length)],
 					],
 					tareas: [
-						tareas[getRandomNumber(30)],
-						tareas[getRandomNumber(30)],
-						tareas[getRandomNumber(30)],
-						tareas[getRandomNumber(30)],
+						tareas[getRandomNumber(tareas.length)],
+						tareas[getRandomNumber(tareas.length)],
+						tareas[getRandomNumber(tareas.length)],
+						tareas[getRandomNumber(tareas.length)],
 					]
-
 				}
 
 				await createEntregable1(data)

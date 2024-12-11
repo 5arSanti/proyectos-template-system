@@ -5,6 +5,7 @@ const { createHTML } = require('../files/createHTML');
 const { createCSS } = require('../files/createCSS');
 
 const createEntregable2 = async (data) => {
+
 	try {
 		const htmlTemplate = `
 			<!DOCTYPE html>
