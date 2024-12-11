@@ -13,8 +13,8 @@ const getEntregableData = (json, region) => {
 			region: region,
 			imagen: images[getRandomNumber(images.length)],
 			descripcion: descriptions[getRandomNumber(descriptions.length)],
-			pasatiempos: getRandomItems(pasatiempos, getRandomNumber(10)),
-			tareas: getRandomItems(tareas, getRandomNumber(10))
+			pasatiempos: getRandomItems(pasatiempos, getRandomNumber(9)),
+			tareas: getRandomItems(tareas, getRandomNumber(9))
 		}
 
 		return data;

@@ -48,7 +48,31 @@ const images = [
 	"https://images.pexels.com/photos/2883057/pexels-photo-2883057.jpeg",
 	"https://images.pexels.com/photos/1312412/pexels-photo-1312412.jpeg",
 	"https://images.pexels.com/photos/1633746/pexels-photo-1633746.jpeg",
-	"https://images.pexels.com/photos/1668876/pexels-photo-1668876.jpeg"
+	"https://images.pexels.com/photos/1668876/pexels-photo-1668876.jpeg",
+	"https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096304_640.jpg",
+	"https://cdn.pixabay.com/photo/2023/07/04/08/31/cats-8105667_640.jpg",
+	"https://cdn.pixabay.com/photo/2016/11/14/19/20/kittens-1824367_640.jpg",
+	"https://cdn.pixabay.com/photo/2019/10/27/13/49/lion-4581841_640.jpg",
+	"https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096305_640.jpg",
+	"https://cdn.pixabay.com/photo/2015/06/03/13/13/cats-796437_640.jpg",
+	"https://cdn.pixabay.com/photo/2021/05/09/18/06/cats-6241679_640.jpg",
+	"https://cdn.pixabay.com/photo/2024/04/05/20/12/ai-generated-8678176_640.jpg",
+	"https://cdn.pixabay.com/photo/2020/10/29/04/33/cats-5695189_640.jpg",
+	"https://cdn.pixabay.com/photo/2021/07/06/19/25/cats-6392466_640.jpg",
+	"https://cdn.pixabay.com/photo/2023/01/04/13/21/animals-7696695_640.jpg",
+	"https://cdn.pixabay.com/photo/2023/04/28/12/18/dogs-7956516_640.jpg",
+	"https://cdn.pixabay.com/photo/2021/07/24/07/25/chow-chow-6488849_640.jpg",
+	"https://cdn.pixabay.com/photo/2018/08/08/23/38/welschcorgi-3593486_640.jpg",
+	"https://cdn.pixabay.com/photo/2015/05/30/19/53/playing-puppies-790638_640.jpg",
+	"https://cdn.pixabay.com/photo/2017/12/07/13/48/siberian-husky-3003813_640.jpg",
+	"https://cdn.pixabay.com/photo/2017/01/08/13/51/greenland-1963005_640.jpg",
+	"https://cdn.pixabay.com/photo/2017/08/24/17/26/old-2677617_1280.jpg",
+	"https://cdn.pixabay.com/photo/2016/07/06/02/52/baseball-1499783_640.jpg",
+	"https://cdn.pixabay.com/photo/2016/11/05/18/40/startrails-1800916_640.jpg",
+	"https://cdn.pixabay.com/photo/2019/07/01/13/33/balloon-4309996_640.jpg",
+	"https://cdn.pixabay.com/photo/2020/07/23/10/37/soccer-5430983_640.jpg",
+	"https://cdn.pixabay.com/photo/2019/10/27/22/49/players-4583038_640.jpg",
+	"https://cdn.pixabay.com/photo/2018/03/26/19/49/food-3263812_640.jpg"
 ];
 
 
