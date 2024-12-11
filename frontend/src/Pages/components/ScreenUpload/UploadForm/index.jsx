@@ -70,7 +70,7 @@ const UploadForm = () => {
                     id={"Region"}
                     label={"Region"}
                     onChange={(event) => handleInputChange("region", event, setValues)}
-                    array={["R6-L1", "R6-L2", "R9-L1"]}
+                    array={["R6-L1", "R6-L2", "R9-L2"]}
                     none={true}
                     defaultValue={values?.region}
                 />

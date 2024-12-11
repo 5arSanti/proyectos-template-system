@@ -1,18 +1,10 @@
-const fs = require('fs');
 const path = require('path');
 
-const archiver = require("archiver");
-const { getRandomNumber } = require('../getRandomNumber');
+const { zipFolder } = require('../ZIP/zipFolder');
+const { createHTML } = require('../files/createHTML');
 
-const createEntregable1 = (data) => {
+const createEntregable1 = async (data) => {
 	try {
-		const tmpDir = path.join(__dirname, '/backend/entregables/tmp');
-        const htmlFilePath = path.join(tmpDir, `index.html`);
-
-        if (!fs.existsSync(tmpDir)) {
-            fs.mkdirSync(tmpDir, { recursive: true });
-        }
-
 		const htmlTemplate = `
 			<!DOCTYPE html>
 			<html lang="en">
@@ -89,29 +81,14 @@ const createEntregable1 = (data) => {
 				</div>
 			</body>
 			</html>
-
         `;
 
-		fs.writeFileSync(htmlFilePath, htmlTemplate, 'utf8');
+		const tmpDir = path.join(__dirname, '../../entregables/tmp');
 
-		const outputDir = path.join(__dirname, `../../entregables/lotes/Entregable 1/${data.region}`);
-        const zipFilePath = path.join(outputDir, `${data.Nombre}.zip`);
+		createHTML(htmlTemplate, tmpDir);
 
-        if (!fs.existsSync(outputDir)) {
-            fs.mkdirSync(outputDir, { recursive: true });
-        }
+		zipFolder(data.Nombre, `Entregable 1/${data.region}`, tmpDir)
 
-        const output = fs.createWriteStream(zipFilePath);
-        const archive = archiver('zip', { zlib: { level: 9 } });
-
-
-        archive.on('error', (err) => {
-            throw err;
-        });
-
-        archive.pipe(output);
-        archive.directory(tmpDir, false);
-        archive.finalize();
 	}
 	catch (err) {
 		throw new Error(err);

@@ -14,6 +14,7 @@ const resetFolder = async (folder) => {
 	await makeFolder(`${folder}/proyectos`);
 }
 
+
 const makeFolder = async (folder) => {
 	if (!folder) {
 		throw new Error("Folder name is required");

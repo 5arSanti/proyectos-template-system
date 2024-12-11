@@ -47,7 +47,7 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 
 				}
 
-				createEntregable1(data)
+				await createEntregable1(data)
 
 			}))
 
