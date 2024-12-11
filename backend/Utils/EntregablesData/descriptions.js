@@ -1,0 +1,25 @@
+const descriptions = [
+    "Soy una persona apasionada por aprender cosas nuevas, ya sea en mi campo profesional o en áreas completamente distintas, porque considero que el conocimiento es una herramienta poderosa para crecer. Siempre busco formas de superar desafíos, adquirir nuevas habilidades y mantenerme actualizado para avanzar en mi desarrollo personal y profesional.",
+    "Soy alguien que disfruta trabajar en equipo, porque creo firmemente que la colaboración y la diversidad de ideas conducen a mejores resultados. Encuentro satisfacción en analizar problemas desde distintas perspectivas y aportar soluciones creativas que beneficien a todos los involucrados.",
+    "Soy curioso por naturaleza y me encanta explorar diferentes áreas del conocimiento, desde lo técnico hasta lo artístico, con el fin de ampliar mis horizontes y comprender el mundo desde múltiples perspectivas. Para mí, cada nueva experiencia es una oportunidad de aprendizaje y crecimiento.",
+    "Soy una persona que valora mucho la honestidad, tanto en mis relaciones personales como profesionales. Me esfuerzo siempre por mantener la transparencia en todo lo que hago y por dar lo mejor de mí en cada situación, porque creo que la integridad es la base de la confianza y el éxito duradero.",
+    "Soy alguien que disfruta los retos porque creo que enfrentarlos nos hace más fuertes y nos ayuda a desarrollar nuevas habilidades. Veo cada obstáculo como una oportunidad para reflexionar, innovar y encontrar formas creativas de mejorar y avanzar.",
+    "Soy muy sociable y me gusta conectar con personas de diferentes contextos, compartir ideas y aprender de sus experiencias. Creo que cada conversación puede ser una fuente de inspiración y que construir relaciones sólidas es clave para el crecimiento personal y profesional.",
+    "Soy una persona organizada que siempre busca mantener un equilibrio saludable entre mis responsabilidades y mis intereses personales. Para mí, la planificación y la gestión eficiente del tiempo son esenciales para alcanzar mis metas sin descuidar mi bienestar y el de quienes me rodean.",
+    "Soy alguien que encuentra satisfacción en ayudar a los demás, ya sea a través de pequeños gestos o contribuciones significativas. Me motiva saber que puedo generar un impacto positivo y hacer una diferencia en las vidas de las personas y en las comunidades donde me desenvuelvo.",
+    "Soy amante de los detalles y creo firmemente que un buen trabajo se refleja en los pequeños toques que marcan la diferencia. Presto especial atención a cada aspecto de lo que hago, porque considero que la calidad y la excelencia se logran cuidando cada mínimo elemento.",
+    "Soy entusiasta y siempre trato de contagiar buena energía a las personas que me rodean. Creo que un ambiente positivo y motivador puede transformar cualquier situación y contribuir a alcanzar objetivos de manera más efectiva y con mayor satisfacción.",
+	"Me considero una persona resiliente, capaz de adaptarme a los cambios y superar las dificultades con actitud positiva. Creo que cada experiencia, por más difícil que sea, deja aprendizajes valiosos.",
+	"Soy alguien con una mentalidad proactiva, siempre buscando oportunidades para mejorar procesos y aportar ideas que generen valor en cualquier proyecto en el que participe.",
+	"Me apasiona la innovación y la creatividad. Disfruto pensar fuera de lo convencional para encontrar soluciones originales a los retos que se presentan.",
+	"Tengo un fuerte sentido de la responsabilidad y me comprometo plenamente con los proyectos que asumo. Siempre doy lo mejor de mí para cumplir con las expectativas y alcanzar los objetivos planteados.",
+	"Soy una persona empática que valora profundamente las emociones y perspectivas de los demás. Esto me permite establecer conexiones genuinas y fomentar un ambiente de confianza y respeto mutuo.",
+	"Me motiva la idea de ser un agente de cambio, de contribuir con mi esfuerzo y dedicación a mejorar las circunstancias de mi entorno y generar un impacto positivo.",
+	"Disfruto aprender de la experiencia de los demás, ya que creo que cada persona tiene algo único que enseñar. Para mí, escuchar es tan importante como hablar.",
+	"Tengo una visión optimista de la vida y prefiero enfocarme en las oportunidades en lugar de los problemas. Creo que una actitud positiva puede marcar la diferencia en cualquier situación.",
+	"Soy alguien que aprecia el valor del esfuerzo y la perseverancia. No me rindo fácilmente y siempre busco nuevas formas de alcanzar mis metas, incluso si eso significa salir de mi zona de confort.",
+	"Valoro la diversidad de ideas y culturas, y me gusta rodearme de personas con perspectivas diferentes a la mía. Creo que la riqueza está en aprender unos de otros y crecer juntos.",
+];
+
+
+module.exports = { descriptions };

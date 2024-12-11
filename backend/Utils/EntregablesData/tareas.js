@@ -1,0 +1,35 @@
+const tareas = [
+    "Hacer la lista de compras para la semana",
+    "Enviar el correo con la propuesta del proyecto",
+    "Ordenar el escritorio de trabajo",
+    "Pagar las facturas del mes",
+    "Llamar al médico para agendar una cita",
+    "Preparar la presentación para la reunión del jueves",
+    "Revisar los documentos del contrato",
+    "Lavar el auto",
+    "Planificar las vacaciones familiares",
+    "Estudiar para el examen de certificación",
+    "Comprar un regalo para el cumpleaños de un amigo",
+    "Actualizar el currículum vitae",
+    "Llevar las prendas a la tintorería",
+    "Terminar de leer el libro pendiente",
+    "Inscribirse a un curso en línea",
+    "Realizar ejercicio al menos tres veces esta semana",
+    "Hacer limpieza profunda en la cocina",
+    "Enviar los documentos para el trámite administrativo",
+    "Instalar las actualizaciones en la computadora",
+    "Ir al supermercado por los productos que faltan",
+    "Escribir un artículo para el blog personal",
+    "Revisar el presupuesto mensual",
+    "Sacar a pasear al perro",
+    "Hacer backup de los archivos importantes",
+    "Arreglar el grifo que gotea en el baño",
+    "Renovar la suscripción al gimnasio",
+    "Configurar la nueva impresora",
+    "Planificar una cena con amigos",
+    "Responder los mensajes pendientes en el correo",
+    "Hacer una lista de objetivos para el próximo mes"
+];
+
+
+module.exports = { tareas }

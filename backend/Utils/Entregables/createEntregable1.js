@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const archiver = require("archiver");
+const { getRandomNumber } = require('../getRandomNumber');
 
 const createEntregable1 = (data) => {
 	try {
@@ -18,17 +19,17 @@ const createEntregable1 = (data) => {
 			<head>
 				<meta charset="UTF-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>Sobre Mi</title>
+				<title>Sobre Mi ${data.Nombre}</title>
 			</head>
 			<body>
 				<div>
-					<h1>¡Hola! Mi nombre es ${data.Nombre}</h1>
+					<h1>¡Hola! Mi nombre es ${data.Nombre || ""}</h1>
 
 					<p>
-						Soy una desarrolladora web full-stack apasionada por crear soluciones innovadoras y funcionales. Tengo experiencia en tecnologías modernas como React, Node.js y MongoDB, y disfruto diseñar interfaces intuitivas y sistemas robustos. Mi enfoque principal está en el desarrollo ágil, optimización del rendimiento y la colaboración en equipo. Fuera del código, me encanta aprender nuevas herramientas tecnológicas y participar en proyectos de impacto social. Si buscas a alguien creativo, dedicado y orientado a resultados, ¡soy la persona adecuada!
+						${data.descripcion || ""}
 					</p>
 
-					<img src="${data.imagen}" alt="Logo">
+					<img src="${data.imagen || ""}" alt="Logo">
 				</div>
 
 				<div>
@@ -39,18 +40,18 @@ const createEntregable1 = (data) => {
 				<div>
 					<h1>Pasatiempos</h1>
 					<ul>
-						<li>Dibujo digital</li>
-						<li>Programacion</li>
-						<li>Hacer deporte</li>
+						${data.pasatiempos.map((item) =>
+							`<li>${item || ""}</li>`).join('')
+						}
 					</ul>
 				</div>
 
 				<div>
 					<h1>Cosas pendientes</h1>
 					<ol>
-						<li>Trabajo</li>
-						<li>Hacer el almuerzo</li>
-						<li>Lavar la ropa</li>
+						${data.tareas.map((item) =>
+							`<li>${item || ""}</li>`).join('')
+						}
 					</ol>
 				</div>
 
@@ -67,18 +68,18 @@ const createEntregable1 = (data) => {
 						</thead>
 						<tbody>
 							<tr>
-								<td>Hacer el almuerzo</td>
+								<td>${data.tareas[0] || ""}</td>
 								<td></td>
-								<td>Trabajo</td>
+								<td>${data.tareas[1] || ""}</td>
 								<td></td>
-								<td>Lavar la ropa</td>
+								<td>${data.tareas[3] || ""}</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 
 				<div>
-					<h1>Formulario de contacto</h1>
+					<h1>Contactame!</h1>
 					<form action="">
 						<input type="text" placeholder="Nombre">
 						<input type="text" placeholder="Descripcion">
@@ -93,7 +94,7 @@ const createEntregable1 = (data) => {
 
 		fs.writeFileSync(htmlFilePath, htmlTemplate, 'utf8');
 
-		const outputDir = path.join(__dirname, `/backend/entregables/lotes/${data.region}`);
+		const outputDir = path.join(__dirname, `../../entregables/lotes/Entregable 1/${data.region}`);
         const zipFilePath = path.join(outputDir, `${data.Nombre}.zip`);
 
         if (!fs.existsSync(outputDir)) {
@@ -103,9 +104,6 @@ const createEntregable1 = (data) => {
         const output = fs.createWriteStream(zipFilePath);
         const archive = archiver('zip', { zlib: { level: 9 } });
 
-        output.on('close', () => {
-            console.log(`ZIP creado exitosamente en: ${zipFilePath} (${archive.pointer()} bytes)`);
-        });
 
         archive.on('error', (err) => {
             throw err;

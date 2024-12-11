@@ -34,7 +34,7 @@ const UploadForm = () => {
             validateFile(values?.files);
     
             const formData = new FormData();
-            formData.append('bootcamp', values.bootcamp);
+            formData.append('region', values.region);
 
             for (let i = 0; i < values.files.length; i++) {
                 formData.append('file', values.files[i]);

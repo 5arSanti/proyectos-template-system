@@ -1,0 +1,35 @@
+const pasatiempos = [
+    "Leer libros de fantasía y misterio",
+    "Hacer caminatas al aire libre",
+    "Jugar videojuegos",
+    "Cocinar recetas nuevas",
+    "Practicar yoga",
+    "Ver series y películas",
+    "Hacer jardinería",
+    "Tocar un instrumento musical",
+    "Pintar o dibujar",
+    "Escribir cuentos o poesía",
+    "Salir a correr o trotar",
+    "Hacer fotografía",
+    "Coleccionar monedas o sellos",
+    "Andar en bicicleta",
+    "Explorar cafés o restaurantes nuevos",
+    "Hacer manualidades o bricolaje",
+    "Bailar en casa o tomar clases de baile",
+    "Hacer meditación",
+    "Armar rompecabezas o jugar juegos de mesa",
+    "Explorar senderos de montaña",
+    "Aprender un nuevo idioma",
+    "Hacer camping o actividades al aire libre",
+    "Asistir a conciertos o eventos culturales",
+    "Hacer modelismo o ensamblar maquetas",
+    "Correr maratones o participar en eventos deportivos",
+    "Ir de pesca",
+    "Viajar y explorar nuevos lugares",
+    "Participar en clubes de lectura",
+    "Aprender técnicas de fotografía con drones",
+    "Entrenar mascotas o aprender sobre comportamiento animal"
+];
+
+
+module.exports = { pasatiempos };
