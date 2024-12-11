@@ -1,0 +1,40 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+  }
+
+  h1 {
+	font-size: 3rem;
+	font-weight: 700;
+	text-align: center;
+  }
+
+  /* Botones personalizados */
+  button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+
+  /* Efecto de hover en enlaces */
+  a:hover {
+	text-decoration: underline;
+	color: #007bff;
+  }
+
+  /* Sección de hobbies con fondo de color */
+  .hobbies {
+	background-color: #f0f0f0;
+	padding: 20px;
+  }
+
+  /* Tabla con bordes redondeados */
+  .schedule table {
+	border-radius: 10px;
+	overflow: hidden;
+  }

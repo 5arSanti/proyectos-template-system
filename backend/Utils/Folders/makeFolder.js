@@ -5,7 +5,7 @@ const makeFolder = async (folderPath) => {
 		throw new Error("Folder name is required");
 	}
 
-	await fs.mkdir(folderPath);
+	await fs.mkdir(folderPath, { recursive: true });
 }
 
 module.exports = { makeFolder };

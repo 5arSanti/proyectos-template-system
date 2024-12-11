@@ -10,15 +10,11 @@ const { upload } = require("../../middlewares/multer.config");
 const { validateFile } = require("../../Utils/validateFiles");
 const { parseXLSX } = require("../../Utils/xlsx/parseXSLS");
 const { createEntregable1 } = require("../../Utils/Entregables/createEntregable1");
-const { getRandomNumber } = require("../../Utils/getRandomNumber");
-const { images } = require("../../Utils/EntregablesData/images");
-const { descriptions } = require("../../Utils/EntregablesData/descriptions");
-const { pasatiempos } = require("../../Utils/EntregablesData/pasatiempos");
-const { tareas } = require("../../Utils/EntregablesData/tareas");
 const { createEntregable2 } = require("../../Utils/Entregables/createEntregable2");
 const { createEntregable4 } = require("../../Utils/Entregables/createEntregable4");
 const { deleteFolder } = require("../../Utils/Folders/deleteFolder");
 const { makeFolder } = require("../../Utils/Folders/makeFolder");
+const { getEntregableData } = require("../../Utils/Entregables/getEntregableData");
 
 
 // POST file/upload
@@ -29,42 +25,19 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 
 		validateFile(files);
 
-		const promises = files.map(async (file) => {
+		for (const file of files) {
+            const jsonData = await parseXLSX(file);
 
-			const jsonData = await parseXLSX(file);
+            for (const json of jsonData) {
 
-			Promise.all(jsonData.map(async (json) => {
-				const data = {
-					Nombre: json.Nombre,
-					styles: getRandomNumber(25),
-					region: region,
-					imagen: images[getRandomNumber(images.length)],
-					descripcion: descriptions[getRandomNumber(descriptions.length)],
-					pasatiempos: [
-						pasatiempos[getRandomNumber(pasatiempos.length)],
-						pasatiempos[getRandomNumber(pasatiempos.length)],
-						pasatiempos[getRandomNumber(pasatiempos.length)],
-						pasatiempos[getRandomNumber(pasatiempos.length)],
-						pasatiempos[getRandomNumber(pasatiempos.length)],
-					],
-					tareas: [
-						tareas[getRandomNumber(tareas.length)],
-						tareas[getRandomNumber(tareas.length)],
-						tareas[getRandomNumber(tareas.length)],
-						tareas[getRandomNumber(tareas.length)],
-					]
-				}
+				const data = getEntregableData(json, region)
 
 				await createEntregable1(data)
 				await createEntregable2(data)
 				await createEntregable4(data)
+			}
+		}
 
-			}))
-
-
-		})
-
-		await Promise.all(promises);
 
 		return response.json({Status: "Success", message: "Archivo procesado correctamente"});
 	}

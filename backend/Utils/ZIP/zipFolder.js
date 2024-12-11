@@ -9,9 +9,7 @@ const zipFolder = async (zipName, savePath, tmpDir) => {
 
 	const outputDir = path.join(__dirname, `../../entregables/lotes/${savePath}`);
 
-	if (!fs.existsSync(outputDir)) {
-		await makeFolder(outputDir);
-	}
+	await makeFolder(outputDir);
 
 	const zipFilePath = path.join(outputDir, `${zipName}.zip`);
 
@@ -31,9 +29,9 @@ const zipFolder = async (zipName, savePath, tmpDir) => {
 
     await zipCompletion;
 
-
     await deleteFolder(tmpDir);
     await makeFolder(tmpDir);
+
 }
 
 module.exports = { zipFolder };

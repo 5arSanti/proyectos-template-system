@@ -1,0 +1,104 @@
+/* styles38.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    border: 3px solid #333;
+    border-radius: 15px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    border-bottom: 3px solid #ff6347;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+}
+
+img {
+    float: right;
+    max-width: 200px;
+    height: auto;
+    border: 3px solid #ff6347;
+    border-radius: 15px;
+    margin: 0 0 10px 10px;
+}
+
+a {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: #ff6347;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #333;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #e5533d;
+}
+
+ul, ol {
+    padding-left: 40px;
+    color: #555;
+}
+
+table {
+    width: 100%;
+    border: 3px solid #333;
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #333;
+    text-align: left;
+}
+
+th {
+    background: #ff6347;
+    color: #fff;
+}
+
+td {
+    background: #fff;
+}
+
+input, button {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin: 12px 0;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+button {
+    background: #ff6347;
+    color: #fff;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background: #e5533d;
+}

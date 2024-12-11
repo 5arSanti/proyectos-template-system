@@ -1,0 +1,157 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* About Me Section */
+#about-me {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#about-me h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+#about-me img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Links Section */
+#links {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+#links a:hover {
+    text-decoration: underline;
+}
+
+/* Hobbies and Tasks Section */
+.hobbies, .tasks {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hobbies h1, .tasks h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Schedule Section */
+.schedule {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule th, .schedule td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Contact Form Section */
+.contact-form {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.contact-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #about-me, .hobbies, .tasks, .schedule, .contact-form {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    #about-me h1 {
+        font-size: 1.5em;
+    }
+
+    #links {
+        margin: 10px 0;
+    }
+
+    #links a {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    #about-me h1 {
+        font-size: 1.2em;
+    }
+
+    .hobbies h1, .tasks h1 {
+        font-size: 1.2em;
+    }
+
+    .contact-form h1 {
+        font-size: 1.2em;
+    }
+
+    .contact-form input {
+        padding: 8px;
+    }
+}

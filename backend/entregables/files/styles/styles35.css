@@ -1,0 +1,72 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+	margin: 0;
+	padding: 20px;
+  }
+
+  h1 {
+	color: #333;
+	font-size: 2rem;
+	text-align: center;
+  }
+
+  p {
+	line-height: 1.5;
+  }
+
+  #about-me {
+	text-align: center;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  #about-me img {
+	width: 200px;
+	border-radius: 50%;
+	margin-top: 20px;
+  }
+
+  .hobbies, .tasks, .schedule, .contact-form {
+	margin-top: 30px;
+  }
+
+  .hobbies ul, .tasks ol {
+	list-style: none;
+	padding: 0;
+  }
+
+  .schedule table {
+	border-collapse: collapse;
+	width: 100%;
+  }
+
+  .schedule th, .schedule td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+  }
+
+  .schedule th {
+	background-color: #f2f2f2;
+  }
+
+  .contact-form form {
+	display: flex;
+	flex-direction: column;
+  }
+
+  .contact-form input, .contact-form button {
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+  }
+
+  .contact-form button {
+	background-color: #4CAF50;
+	color: white;
+	cursor: pointer;
+  }
