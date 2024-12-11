@@ -8,11 +8,13 @@ const { makeFolder } = require('../Folders/makeFolder');
 const zipFolder = async (zipName, savePath, tmpDir) => {
 
 	const outputDir = path.join(__dirname, `../../entregables/lotes/${savePath}`);
-	const zipFilePath = path.join(outputDir, `${zipName}.zip`);
 
 	if (!fs.existsSync(outputDir)) {
-		fs.mkdirSync(outputDir, { recursive: true });
+		await makeFolder(outputDir);
 	}
+
+	const zipFilePath = path.join(outputDir, `${zipName}.zip`);
+
 
 	const output = fs.createWriteStream(zipFilePath);
 	const archive = archiver('zip', { zlib: { level: 9 } });

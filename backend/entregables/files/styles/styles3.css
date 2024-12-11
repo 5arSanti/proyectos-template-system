@@ -1,0 +1,150 @@
+/* General */
+body {
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.5;
+}
+
+h1 {
+    color: #2d2d2d;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* Encabezado */
+#about-me {
+    padding: 20px;
+    background-color: #e6f7ff;
+    border-bottom: 2px solid #99ccff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+#about-me img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+#about-me h1 {
+    font-size: 1.8rem;
+}
+
+#about-me p {
+    font-size: 0.9rem;
+}
+
+/* Enlaces */
+#links {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+
+#links a {
+    text-decoration: none;
+    color: #0066cc;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+#links a:hover {
+    text-decoration: underline;
+}
+
+/* Secciones de listas */
+.hobbies,
+.tasks {
+    margin: 15px auto;
+    max-width: 900px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.hobbies ul,
+.tasks ol {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+
+.hobbies li,
+.tasks li {
+    margin-bottom: 8px;
+}
+
+/* Tabla */
+.schedule {
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule th,
+.schedule td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.schedule th {
+    background-color: #99ccff;
+    color: #fff;
+}
+
+.schedule td {
+    background-color: #f9f9f9;
+}
+
+/* Formulario */
+.contact-form {
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form input,
+.contact-form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #0066cc;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+.contact-form button:hover {
+    background-color: #004d99;
+}

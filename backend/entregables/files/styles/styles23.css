@@ -1,0 +1,75 @@
+/* General */
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+#about-me {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#about-me img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+#about-me h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+/* Enlaces */
+#links {
+    text-align: center;
+    margin: 20px auto;
+}
+
+#links a {
+    color: #007acc;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#links a:hover {
+    text-decoration: underline;
+}
+
+/* Listas */
+.hobbies,
+.tasks {
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabla */
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #ffffff;
+}
+
+.schedule th,
+.schedule td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Formulario */
+.contact-form {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

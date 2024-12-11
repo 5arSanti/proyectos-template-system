@@ -1,0 +1,75 @@
+/* General */
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #00ff00;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+#about-me {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    border-bottom: 2px solid #0f0;
+}
+
+#about-me img {
+    max-width: 120px;
+    border-radius: 50%;
+    border: 2px solid #0f0;
+}
+
+#about-me h1 {
+    font-size: 1.8rem;
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+}
+
+/* Enlaces */
+#links {
+    text-align: center;
+    padding: 10px;
+}
+
+#links a {
+    color: #0f0;
+    text-decoration: none;
+    margin: 0 10px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+#links a:hover {
+    color: #fff;
+}
+
+/* Listas */
+.hobbies li,
+.tasks li {
+    margin-bottom: 5px;
+    list-style: square;
+}
+
+/* Tabla */
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule th,
+.schedule td {
+    padding: 10px;
+    border: 1px solid #0f0;
+    text-align: center;
+    color: #0f0;
+}
+
+/* Formulario */
+.contact-form button {
+    background-color: #0f0;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    text-shadow: 0 0 5px #0f0;
+}

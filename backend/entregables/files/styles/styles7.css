@@ -1,0 +1,57 @@
+/* General */
+body {
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    color: #000;
+}
+
+/* Encabezado */
+#about-me {
+    text-align: left;
+    padding: 10px;
+}
+
+#about-me img {
+    max-width: 50px;
+    float: left;
+    margin-right: 10px;
+}
+
+/* Enlaces */
+#links {
+    text-align: center;
+    margin: 10px 0;
+}
+
+#links a {
+    color: #000;
+    margin: 0 5px;
+}
+
+/* Listas */
+.hobbies ul,
+.tasks ol {
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Tabla */
+.schedule table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.schedule th,
+.schedule td {
+    border: none;
+    padding: 5px;
+}
+
+/* Formulario */
+.contact-form {
+    margin: 0 auto;
+    max-width: 300px;
+}

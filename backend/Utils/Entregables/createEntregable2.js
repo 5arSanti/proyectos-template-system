@@ -2,8 +2,9 @@ const path = require('path');
 
 const { zipFolder } = require('../ZIP/zipFolder');
 const { createHTML } = require('../files/createHTML');
+const { createCSS } = require('../files/createCSS');
 
-const createEntregable1 = async (data) => {
+const createEntregable2 = async (data) => {
 	try {
 		const htmlTemplate = `
 			<!DOCTYPE html>
@@ -12,9 +13,12 @@ const createEntregable1 = async (data) => {
 				<meta charset="UTF-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<title>Sobre Mi ${data.Nombre}</title>
+
+			    <link rel="stylesheet" href="./styles.css">
+
 			</head>
 			<body>
-				<div>
+				<div id="about-me">
 					<h1>¡Hola! Mi nombre es ${data.Nombre || ""}</h1>
 
 					<p>
@@ -24,12 +28,12 @@ const createEntregable1 = async (data) => {
 					<img src="${data.imagen || ""}" alt="Logo">
 				</div>
 
-				<div>
+				<div id="links">
 					<a href="https://www.youtube.com/">YouTube</a>
 					<a href="https://github.com/">GitHub</a>
 				</div>
 
-				<div>
+				<div class="hobbies">
 					<h1>Pasatiempos</h1>
 					<ul>
 						${data.pasatiempos.map((item) =>
@@ -38,7 +42,7 @@ const createEntregable1 = async (data) => {
 					</ul>
 				</div>
 
-				<div>
+				<div class="tasks">
 					<h1>Cosas pendientes</h1>
 					<ol>
 						${data.tareas.map((item) =>
@@ -47,7 +51,7 @@ const createEntregable1 = async (data) => {
 					</ol>
 				</div>
 
-				<div>
+				<div class="schedule">
 					<table border="1">
 						<thead>
 							<tr>
@@ -70,7 +74,7 @@ const createEntregable1 = async (data) => {
 					</table>
 				</div>
 
-				<div>
+				<div class="contact-form">
 					<h1>Contactame!</h1>
 					<form action="">
 						<input type="text" placeholder="Nombre">
@@ -85,14 +89,16 @@ const createEntregable1 = async (data) => {
 
 		const tmpDir = path.join(__dirname, '../../entregables/tmp');
 
+		createCSS(data.styles, tmpDir);
+
 		await createHTML(htmlTemplate, tmpDir);
 
-		await zipFolder(data.Nombre, `Entregable 1/${data.region}`, tmpDir)
+		await zipFolder(data.Nombre, `Entregable 2/${data.region}`, tmpDir)
 
 	}
 	catch (err) {
-		throw Error(err);
+		throw new Error(err);
 	}
 }
 
-module.exports = { createEntregable1 };
+module.exports = { createEntregable2 };

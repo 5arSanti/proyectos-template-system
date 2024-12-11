@@ -1,0 +1,89 @@
+/* General */
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #eaeaea;
+    color: #2a2a2a;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+#about-me {
+    text-align: left;
+    padding: 20px;
+    background-color: #333;
+    color: #eee;
+    border-bottom: 3px solid #555;
+}
+
+#about-me img {
+    float: right;
+    max-width: 80px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#about-me h1 {
+    font-size: 1.5rem;
+}
+
+/* Enlaces */
+#links {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #555;
+    color: #eee;
+}
+
+#links a {
+    text-decoration: none;
+    color: #ffa500;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+#links a:hover {
+    text-decoration: underline;
+}
+
+/* Listas */
+.hobbies ul,
+.tasks ol {
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+.hobbies li,
+.tasks li {
+    margin-bottom: 5px;
+}
+
+/* Tabla */
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+.schedule th,
+.schedule td {
+    padding: 10px;
+    border: 1px solid #555;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.schedule th {
+    background-color: #333;
+    color: #ffa500;
+}
+
+/* Formulario */
+.contact-form {
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #555;
+    border-radius: 5px;
+    max-width: 400px;
+    color

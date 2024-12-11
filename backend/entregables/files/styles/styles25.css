@@ -1,0 +1,45 @@
+/* General */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #efe7dc;
+    color: #3e2723;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+#about-me {
+    text-align: center;
+    padding: 20px;
+    background-color: #d7ccc8;
+    border-bottom: 2px solid #6d4c41;
+}
+
+#about-me img {
+    max-width: 120px;
+    border-radius: 50%;
+    border: 3px solid #6d4c41;
+}
+
+#about-me h1 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+/* Enlaces */
+#links a {
+    color: #6d4c41;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+#links a:hover {
+    color: #3e2723;
+}
+
+/* Tabla */
+.schedule th {
+    background-color: #6d4c41;
+    color: #efe7dc;
+}

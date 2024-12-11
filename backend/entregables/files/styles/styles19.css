@@ -1,0 +1,111 @@
+/* General */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #101010;
+    color: #00ffcc;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Encabezado */
+#about-me {
+    padding: 30px;
+    background-color: #1a1a1a;
+    border-bottom: 3px solid #00ffcc;
+}
+
+#about-me img {
+    max-width: 100px;
+    border-radius: 50%;
+    border: 3px solid #00ffcc;
+}
+
+#about-me h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+    text-shadow: 0 0 5px #00ffcc;
+}
+
+/* Enlaces */
+#links {
+    margin: 20px auto;
+    padding: 10px;
+}
+
+#links a {
+    color: #00ffcc;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+}
+
+#links a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #00ffcc;
+}
+
+/* Listas */
+.hobbies ul,
+.tasks ol {
+    list-style-type: square;
+}
+
+.hobbies li,
+.tasks li {
+    margin-bottom: 10px;
+}
+
+/* Tabla */
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+.schedule th,
+.schedule td {
+    padding: 10px;
+    border: 1px solid #00ffcc;
+    color: #00ffcc;
+}
+
+.schedule th {
+    background-color: #1a1a1a;
+}
+
+/* Formulario */
+.contact-form {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    background-color: #1a1a1a;
+    border: 1px solid #00ffcc;
+    border-radius: 5px;
+}
+
+.contact-form input,
+.contact-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #00ffcc;
+    background-color: #101010;
+    color: #00ffcc;
+}
+
+.contact-form button {
+    background-color: #00ffcc;
+    color: #101010;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    background-color: #101010;
+    color: #00ffcc;
+    border: 1px solid #00ffcc;
+}

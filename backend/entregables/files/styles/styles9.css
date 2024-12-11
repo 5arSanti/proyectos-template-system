@@ -1,0 +1,87 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Encabezado */
+#about-me {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+}
+
+#about-me img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+#about-me h1 {
+    font-size: 1.5rem;
+    color: #444;
+}
+
+/* Enlaces */
+#links {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#links a {
+    color: #007acc;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#links a:hover {
+    text-decoration: underline;
+}
+
+/* Listas */
+.hobbies ul,
+.tasks ol {
+    padding-left: 20px;
+}
+
+.hobbies li,
+.tasks li {
+    margin: 5px 0;
+}
+
+/* Tabla */
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.schedule th,
+.schedule td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Formulario */
+.contact-form input,
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.contact-form button {
+    background-color: #007acc;
+    color: white;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #005f99;
+}

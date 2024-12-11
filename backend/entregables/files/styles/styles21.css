@@ -1,0 +1,75 @@
+/* General */
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #f7f1e3;
+    color: #2f2f2f;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+#about-me {
+    text-align: center;
+    padding: 20px;
+    background-color: #d1ccc0;
+    border-bottom: 2px solid #b33939;
+}
+
+#about-me img {
+    max-width: 120px;
+    border-radius: 50%;
+    border: 2px solid #b33939;
+}
+
+#about-me h1 {
+    font-size: 2rem;
+    color: #404040;
+}
+
+/* Enlaces */
+#links {
+    text-align: center;
+    padding: 10px;
+    background-color: #c8d6e5;
+}
+
+#links a {
+    color: #576574;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#links a:hover {
+    color: #b33939;
+}
+
+/* Listas */
+.hobbies li,
+.tasks li {
+    margin-bottom: 8px;
+}
+
+/* Tabla */
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule th,
+.schedule td {
+    padding: 8px;
+    border: 1px solid #576574;
+}
+
+.schedule th {
+    background-color: #b33939;
+    color: #f7f1e3;
+}
+
+/* Formulario */
+.contact-form {
+    padding: 20px;
+    background-color: #d1ccc0;
+    border-radius: 5px;
+}

@@ -11,6 +11,8 @@ const { images } = require("../../Utils/EntregablesData/images");
 const { descriptions } = require("../../Utils/EntregablesData/descriptions");
 const { pasatiempos } = require("../../Utils/EntregablesData/pasatiempos");
 const { tareas } = require("../../Utils/EntregablesData/tareas");
+const { createEntregable2 } = require("../../Utils/Entregables/createEntregable2");
+const { createEntregable4 } = require("../../Utils/Entregables/createEntregable4");
 
 
 // POST file/upload
@@ -28,6 +30,7 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 			Promise.all(jsonData.map(async (json) => {
 				const data = {
 					Nombre: json.Nombre,
+					styles: getRandomNumber(25),
 					region: region,
 					imagen: images[getRandomNumber(40)],
 					descripcion: descriptions[getRandomNumber(20)],
@@ -48,6 +51,8 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 				}
 
 				await createEntregable1(data)
+				await createEntregable2(data)
+				await createEntregable4(data)
 
 			}))
 

@@ -1,0 +1,55 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+#about-me {
+    text-align: center;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-bottom: 3px solid #ff5722;
+}
+
+#about-me img {
+    max-width: 100px;
+    border-radius: 50%;
+    border: 2px solid #ff5722;
+}
+
+#about-me h1 {
+    font-size: 2rem;
+}
+
+/* Enlaces */
+#links a {
+    color: #ff5722;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#links a:hover {
+    color: #fff;
+}
+
+/* Tabla */
+.schedule th {
+    background-color: #ff5722;
+    color: #121212;
+}
+
+/* Formulario */
+.contact-form button {
+    background-color: #ff5722;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #ff784e;
+}

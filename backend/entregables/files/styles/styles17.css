@@ -1,0 +1,70 @@
+/* General */
+body {
+    font-family: 'Verdana', sans-serif;
+    background: url('https://via.placeholder.com/1500x1000') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Encabezado */
+#about-me {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fff;
+}
+
+#about-me img {
+    max-width: 150px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+#about-me h1 {
+    font-size: 2rem;
+}
+
+/* Enlaces */
+#links {
+    text-align: center;
+    padding: 10px;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+#links a:hover {
+    color: #00ffcc;
+}
+
+/* Listas */
+.hobbies li,
+.tasks li {
+    margin-bottom: 5px;
+}
+
+/* Tabla */
+.schedule th,
+.schedule td {
+    padding: 8px;
+    border: 1px solid #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Formulario */
+.contact-form {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
