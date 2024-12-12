@@ -15,6 +15,7 @@ const { createEntregable4 } = require("../../Utils/Entregables/createEntregable4
 const { deleteFolder } = require("../../Utils/Folders/deleteFolder");
 const { makeFolder } = require("../../Utils/Folders/makeFolder");
 const { getEntregableData } = require("../../Utils/Entregables/getEntregableData");
+const { createEntregable6 } = require("../../Utils/Entregables/createEntregable6");
 
 
 // POST file/upload
@@ -35,6 +36,7 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 				await createEntregable1(data)
 				await createEntregable2(data)
 				await createEntregable4(data)
+				await createEntregable6(data)
 			}
 		}
 
@@ -57,6 +59,9 @@ router.post("/delete-files", async (request, response) => {
 
 		await deleteFolder(path.resolve(__dirname, "../../entregables/lotes/Entregable 4"));
 		await makeFolder(path.resolve(__dirname, "../../entregables/lotes/Entregable 4"));
+
+		await deleteFolder(path.resolve(__dirname, "../../entregables/lotes/Entregable 6"));
+		await makeFolder(path.resolve(__dirname, "../../entregables/lotes/Entregable 6"));
 
 		return response.json({Status: "Success", message: "Output vaciado correctamente"});
 	}

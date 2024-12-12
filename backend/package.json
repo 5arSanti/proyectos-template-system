@@ -4,7 +4,7 @@
   "description": "Backend for PGD web app",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon --ignore entregables/tmp/ index.js",
     "prod": "node index.js"
   },
   "dependencies": {

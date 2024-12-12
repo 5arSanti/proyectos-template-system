@@ -2,12 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const { makeFolder } = require('../Folders/makeFolder');
 
-const createHTML = async (htmlTemplate, tmpDir) => {
-	const htmlFilePath = path.join(tmpDir, `index.html`);
+const createHTML = async (htmlTemplate, tmpDir, fileName="index.html") => {
+	const htmlFilePath = path.join(tmpDir, fileName);
 
-	if (!fs.existsSync(tmpDir)) {
-		await makeFolder(tmpDir);
-	}
+	await makeFolder(tmpDir);
 
 	fs.writeFileSync(htmlFilePath, htmlTemplate, 'utf8');
 }
