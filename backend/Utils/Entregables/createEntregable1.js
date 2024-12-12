@@ -87,7 +87,7 @@ const createEntregable1 = async (data) => {
 
 		await createHTML(htmlTemplate, tmpDir);
 
-		await zipFolder(data.Nombre, `Entregable 1/${data.region}`, tmpDir)
+		await zipFolder(`Entregable 1_${data.Nombre}`, `${data.region}/${data.Nombre}/`, tmpDir)
 
 	}
 	catch (err) {

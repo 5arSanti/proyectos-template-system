@@ -33,10 +33,10 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 
 				const data = getEntregableData(json, region)
 
-				await createEntregable1(data)
-				await createEntregable2(data)
-				await createEntregable4(data)
-				await createEntregable6(data)
+				await createEntregable1(data);
+				await createEntregable2(data);
+				await createEntregable4(data);
+				await createEntregable6(data);
 			}
 		}
 
@@ -51,17 +51,8 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 
 router.post("/delete-files", async (request, response) => {
 	try {
-		await deleteFolder(path.resolve(__dirname, "../../entregables/lotes/Entregable 1"));
-		await makeFolder(path.resolve(__dirname, "../../entregables/lotes/Entregable 1"));
-
-		await deleteFolder(path.resolve(__dirname, "../../entregables/lotes/Entregable 2"));
-		await makeFolder(path.resolve(__dirname, "../../entregables/lotes/Entregable 2"));
-
-		await deleteFolder(path.resolve(__dirname, "../../entregables/lotes/Entregable 4"));
-		await makeFolder(path.resolve(__dirname, "../../entregables/lotes/Entregable 4"));
-
-		await deleteFolder(path.resolve(__dirname, "../../entregables/lotes/Entregable 6"));
-		await makeFolder(path.resolve(__dirname, "../../entregables/lotes/Entregable 6"));
+		await deleteFolder(path.resolve(__dirname, "../../entregables/lotes"));
+		await makeFolder(path.resolve(__dirname, "../../entregables/lotes"));
 
 		return response.json({Status: "Success", message: "Output vaciado correctamente"});
 	}
