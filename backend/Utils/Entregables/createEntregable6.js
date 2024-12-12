@@ -5,6 +5,8 @@ const { zipFolder } = require('../ZIP/zipFolder');
 const { createHTML } = require('../files/createHTML');
 const { makeFolder } = require('../Folders/makeFolder');
 const { deleteFolder } = require('../Folders/deleteFolder');
+const { createFile } = require('../files/createFile');
+const { generateRandomColor } = require('../generateRandomColor');
 
 const createEntregable6 = async (data) => {
 	try {
@@ -26,6 +28,7 @@ const createEntregable6 = async (data) => {
 				<link rel="stylesheet" href="assets/css/custom.css">
 				<link rel="stylesheet" href="assets/css/fontawesome.min.css">
 				<link rel="stylesheet" href="./app.css">
+				<link rel="stylesheet" href="./main.css">
 
 			</head>
 			<body>
@@ -305,6 +308,16 @@ const createEntregable6 = async (data) => {
 		await makeFolder(tmpDir);
 
 		await fs.cp(srcDir, tmpDir, { recursive: true });
+
+		const cssTemplate = `
+			:root {
+				--pallete-1: ${generateRandomColor()};
+				--pallete-2: ${generateRandomColor()};
+				--pallete-3: ${generateRandomColor()};
+			}
+		`;
+
+		await createFile(cssTemplate, tmpDir, 'main.css');
 
 		await createHTML(htmlTemplate, tmpDir);
 
