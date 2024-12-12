@@ -1,0 +1,7 @@
+{
+	"ignore": [
+		"entregables/tmp/*",
+		"entregables/lotes/*",
+		"entregables/lotes/*.html"
+	]
+}

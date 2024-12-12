@@ -1,0 +1,30 @@
+:root {
+    --pallete-1: #5aa5ce;
+    --pallete-2: #9e9e9e;
+    --pallete-3: #312140;
+}
+
+body {
+    background-color: var(--pallete-2);
+}
+
+.bg-dark {
+    background-color: var(--pallete-3) !important;
+}
+
+.text-success {
+    color: var(--pallete-1) !important;
+}
+#template-mo-zay-hero-carousel .carousel-control-next i, #template-mo-zay-hero-carousel .carousel-control-prev i {
+    color: var(--pallete-1) !important;
+}
+.btn-success {
+    background-color: var(--pallete-1) !important;
+    border-color: var(--pallete-1) !important;
+}
+.bg-success {
+    background-color: var(--pallete-1) !important;
+}
+.text-success {
+    color: var(--pallete-1) !important;
+}
