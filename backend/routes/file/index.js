@@ -20,7 +20,7 @@ const { resetFolder } = require("../../Utils/resetFolder");
 
 router.get("/output", async (request, response) => {
 	try {
-		const outputDir = path.resolve(__dirname, "../../project_files/output_pdf");
+		const outputDir = path.resolve(__dirname, "../../project_files/output");
 
         const zipFileName = "output.zip";
 
