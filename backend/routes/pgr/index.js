@@ -29,14 +29,25 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 		for (const file of files) {
             const jsonData = await parseXLSX(file);
 
+			let count = 1;
+
             for (const json of jsonData) {
+				const tmpDir = path.join(__dirname, '../../entregables/tmp');
+
+				await deleteFolder(tmpDir);
+				await makeFolder(tmpDir);
 
 				const data = getEntregableData(json, region)
 
-				await createEntregable1(data);
-				await createEntregable2(data);
-				await createEntregable4(data);
-				await createEntregable6(data);
+				await createEntregable1(data, count);
+
+				await createEntregable2(data, count);
+
+				await createEntregable4(data, count);
+
+				await createEntregable6(data, count);
+
+				count++;
 			}
 		}
 
@@ -44,6 +55,7 @@ router.post("/upload", upload.array("file"), async (request, response) => {
 		return response.json({Status: "Success", message: "Archivo procesado correctamente"});
 	}
 	catch (err) {
+		console.log(err);
 		return response.status(500).json({Error: err.message});
 	}
 });

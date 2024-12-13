@@ -8,7 +8,7 @@ const { deleteFolder } = require('../Folders/deleteFolder');
 const { createFile } = require('../files/createFile');
 const { generateRandomColor } = require('../generateRandomColor');
 
-const createEntregable6 = async (data) => {
+const createEntregable6 = async (data, count) => {
 	try {
 		const email = data.Nombre.replace(/ /g, "_");
 
@@ -321,7 +321,7 @@ const createEntregable6 = async (data) => {
 
 		await createHTML(htmlTemplate, tmpDir);
 
-		await zipFolder(`Entregable 6_${data.Nombre}`, `${data.region}/${data.Nombre}/`, tmpDir);
+		await zipFolder(`Entregable 6_${data.Nombre}`, `${data.region}/${count}_${data.Nombre}/`, tmpDir);
 
 	}
 	catch (err) {

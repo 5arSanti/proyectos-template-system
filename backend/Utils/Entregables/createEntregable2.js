@@ -4,7 +4,7 @@ const { zipFolder } = require('../ZIP/zipFolder');
 const { createHTML } = require('../files/createHTML');
 const { createCSS } = require('../files/createCSS');
 
-const createEntregable2 = async (data) => {
+const createEntregable2 = async (data, count) => {
 
 	try {
 		const htmlTemplate = `
@@ -94,7 +94,7 @@ const createEntregable2 = async (data) => {
 
 		await createHTML(htmlTemplate, tmpDir);
 
-		await zipFolder(`Entregable 2_${data.Nombre}`, `${data.region}/${data.Nombre}/`, tmpDir)
+		await zipFolder(`Entregable 2_${data.Nombre}`, `${data.region}/${count}_${data.Nombre}/`, tmpDir)
 
 	}
 	catch (err) {
