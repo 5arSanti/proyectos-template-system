@@ -12,14 +12,18 @@ const handleDownload = (url, name) => {
     handleNotifications("info", `Se descargó ${name}`);
 }
 
-const handleDownloadFile = async (uri) => {
+const handleDownloadFile = async (uri, name,) => {
     let date = new Date();
+
+    if (!name) {
+        name = `Lote de Archivos - ${moment(date).format("DD-MM-YYYY_hh-mm")}.zip`
+    }
 
     try {
         const file = await handleGetFile(uri)
         const url = window.URL.createObjectURL(file);
     
-        handleDownload(url, `Lote de Archivos - ${moment(date).format("DD-MM-YYYY_hh-mm")}.zip`);
+        handleDownload(url, name);
     } 
     catch (err) {
         handleNotifications("error", err.message);

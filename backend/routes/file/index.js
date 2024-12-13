@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require('path');
 const archiver = require("archiver");
+const xlsx = require("xlsx");
+const fs = require("fs");
 
 
 const router = express.Router();
@@ -105,6 +107,70 @@ router.post("/json", async (request, response) => {
         await createOutputFile(parsedJSON);
 
 		return response.json({Status: "Success", message: "Archivo procesado correctamente"});
+	}
+	catch (err) {
+		return response.status(500).json({Error: err.message});
+	}
+})
+
+router.post("/project", async (request, response) => {
+    try {
+        // Obtén el texto del cuerpo de la solicitud
+        const text = request.body.project;
+        if (!text) {
+            return response.status(400).json({ Error: "No se proporcionó texto en la solicitud." });
+        }
+
+        const regex = /\{(.*?)\}\s*([\s\S]*?)(?=(\n\{|$))/g;
+        let match;
+
+        const data = {};
+
+        while ((match = regex.exec(text)) !== null) {
+            const section = match[1].trim(); // Título dentro de {}
+            const content = match[2].trim(); // Texto asociado
+            data[section] = content;
+        }
+
+        if (Object.keys(data).length === 0) {
+            return response.status(400).json({ Error: "No se encontraron secciones válidas en el texto." });
+        }
+
+        const workbook = xlsx.utils.book_new();
+
+        // Crear los datos para el Excel
+        const worksheetData = [
+            Object.keys(data),
+            Object.values(data)
+        ];
+        const worksheet = xlsx.utils.aoa_to_sheet(worksheetData);
+
+        xlsx.utils.book_append_sheet(workbook, worksheet, "Proyecto");
+
+        const filePath = path.join(__dirname, "../../project_files/excel/project.xlsx");
+        xlsx.writeFile(workbook, filePath);
+
+        return response.status(200).json({ Status: "Success", message: "Archivo de Excel creado correctamente."});
+    }
+	catch (err) {
+        return response.status(500).json({ Error: err.message });
+    }
+});
+
+router.get("/project/excel", async (request, response) => {
+	try {
+        const filePath = path.join(__dirname, "../../project_files/excel/project.xlsx");
+
+		if (!fs.existsSync(filePath)) {
+            return response.status(404).json({ Error: "El archivo no existe." });
+        }
+
+        return response.download(filePath, "project.xlsx", (err) => {
+            if (err) {
+                return response.status(500).json({ Error: "Error al descargar el archivo." });
+            }
+        });
+
 	}
 	catch (err) {
 		return response.status(500).json({Error: err.message});
